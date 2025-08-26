@@ -37,11 +37,17 @@ export const getVehicles = async (req, res) => {
     );
     const total = countResult[0].total;
 
+    const vehicles = rows.map(row => ({
+      ...row,
+      latitude: Number(row.latitude),
+      longitude: Number(row.longitude),
+    }));
+
     res.json({
       page,
       total,
       totalPages: Math.ceil(total / limit),
-      data: rows
+      data: vehicles
     });
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err });
