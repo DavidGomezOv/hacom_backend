@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { getVehicles } from "../controllers/vehicles.controller.js";
-import { verifyToken } from "../middlewares/auth.middleware.js";
+import { authenticateToken } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.get("/vehicles", verifyToken, getVehicles);
+router.get("/vehicles", authenticateToken, getVehicles);
 
 export default router;
