@@ -13,6 +13,8 @@ export const login = async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
+
+    const user = rows[0];
     
     const token = jwt.sign(
       { id: user.id, phone: user.phone },
