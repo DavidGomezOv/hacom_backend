@@ -5,4 +5,4 @@
 .LSOverride
 
 # dotenv environment variable files
-.env
+.env.*
