@@ -4,6 +4,6 @@ import { authenticateToken } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.get("/vehicles", authenticateToken, getVehicles);
+router.get("/getVehicles", authenticateToken, getVehicles);
 
 export default router;

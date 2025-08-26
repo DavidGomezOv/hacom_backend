@@ -11,13 +11,12 @@ export const getVehicles = async (req, res) => {
     const [rows] = await pool.query(
       `
         SELECT 
-            Vehiculo.ID_Vehiculo, 
-            Vehiculo.Placa, 
-            Vehiculo.Punto_Color, 
-            Vehiculo.Etiqueta,
-            Ubicacion.Latitud, 
-            Ubicacion.Longitud, 
-            Ubicacion.Nombre AS Nombre_Ubicacion
+            Vehiculo.ID_Vehiculo AS id, 
+            Vehiculo.Placa AS plate, 
+            Vehiculo.Punto_Color AS color, 
+            Vehiculo.Etiqueta AS label,
+            Ubicacion.Latitud AS latitude, 
+            Ubicacion.Longitud AS longitude
         FROM tb_Vehiculo AS Vehiculo
         INNER JOIN tb_Ubicacion_Vehiculo AS Relacion 
             ON Relacion.ID_Vehiculo = Vehiculo.ID_Vehiculo
