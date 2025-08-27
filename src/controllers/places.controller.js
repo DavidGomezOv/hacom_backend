@@ -10,7 +10,17 @@ export const getPlaces = async (req, res) => {
     const offset = (page - 1) * limit;
 
     const [rows] = await pool.query(
-      "SELECT * FROM tb_Lugar LIMIT ? OFFSET ?",
+      `
+        SELECT 
+          ID_Lugar AS id,
+          Nombre AS name,
+          Descripcion AS description,
+          Telefono AS phone,
+          Latitud AS latitude,
+          Longitud AS longitude
+        FROM tb_Lugar
+        LIMIT ? OFFSET ?
+      `,
       [limit, offset]
     );
 
