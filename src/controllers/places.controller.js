@@ -29,11 +29,17 @@ export const getPlaces = async (req, res) => {
     );
     const total = countResult[0].total;
 
+    const places = rows.map(row => ({
+      ...row,
+      latitude: Number(row.latitude),
+      longitude: Number(row.longitude),
+    }));
+
     res.json({
       page,
       total,
       totalPages: Math.ceil(total / limit),
-      data: rows
+      data: places
     });
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err });
