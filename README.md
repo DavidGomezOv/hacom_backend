@@ -1,5 +1,10 @@
 # Hacom Backend
 
+![Backend Status](https://img.shields.io/website-up-down-green-red/https/hacombackend-production.up.railway.app)
+
+![Node.js](https://img.shields.io/badge/Node.js-18-brightgreen?logo=node.js&logoColor=white)
+
+![npm](https://img.shields.io/badge/npm-9.x-blue?logo=npm&logoColor=white)
 
 ## 📝 Description
 
